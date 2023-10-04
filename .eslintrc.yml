@@ -1,0 +1,128 @@
+env:
+  node: true
+  es2022: true
+  jest/globals: true
+  react-native/react-native: true
+root: true
+extends:
+  - plugin:react/recommended
+  - plugin:import/recommended
+  - plugin:import/typescript
+  - plugin:jest/recommended
+  - "@react-native-community"
+  - "@react-native"
+  - airbnb
+  - airbnb/hooks
+  - airbnb-typescript
+  - prettier
+  - plugin:prettier/recommended
+  - eslint-config-prettier
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: latest
+  sourceType: module
+  project: "./tsconfig.json"
+plugins:
+  - react
+  - jest
+  - "@typescript-eslint"
+  - eslint-plugin-simple-import-sort
+  - eslint-plugin-unused-imports
+  - prettier
+settings:
+  import/resolver:
+    typescript: true
+    node: true
+overrides:
+  - files:
+      - "*.ts"
+      - "*.tsx"
+    extends:
+      - "plugin:@typescript-eslint/recommended"
+      - "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    rules:
+      "@typescript-eslint/no-unsafe-assignment": warn
+      "@typescript-eslint/ban-ts-comment": warn
+      "@typescript-eslint/no-unsafe-call": warn
+      "@typescript-eslint/no-explicit-any": warn
+      "@typescript-eslint/no-use-before-define": off
+      "@typescript-eslint/default-param-last": warn
+rules:
+  prettier/prettier: warn
+  react/jsx-props-no-spreading: off
+  quotes:
+    - warn
+    - double
+  max-len:
+    - warn
+    - code: 120
+      tabWidth: 2
+  import/no-extraneous-dependencies:
+    - warn
+    - devDependencies: true
+  react/jsx-filename-extension:
+    - error
+    - extensions:
+        - ".jsx"
+        - ".tsx"
+  camelcase:
+    - error
+    - allow:
+        - "^UNSAFE_"
+  no-unused-vars:
+    - error
+    - varsIgnorePattern: "React"
+  react/prop-types: error
+  import/extensions:
+    - error
+    - ignorePackages
+    - js: never
+      jsx: never
+      ts: never
+      tsx: never
+  react/no-unstable-nested-components: warn
+  import/prefer-default-export: off
+  import/no-cycle: warn
+  object-curly-spacing:
+    - warn
+    - always
+  max-lines: off
+  react-native/no-unused-styles: error
+  react-native/split-platform-components: error
+  react-native/no-inline-styles: error
+  react-native/no-color-literals: error
+  react-native/no-raw-text: error
+  react-native/no-single-element-style-arrays: error
+  import/no-unresolved: off
+  import/no-relative-parent-imports: off
+  import/no-relative-packages: off
+  react/react-in-jsx-scope: off
+  react/require-default-props:
+    - warn
+    - functions: defaultArguments
+  jest/no-disabled-tests: warn
+  jest/no-focused-tests: error
+  jest/no-identical-title: error
+  jest/prefer-to-have-length: warn
+  jest/valid-expect: error
+  jest/expect-expect:
+    - error
+    - assertFunctionNames:
+        - expect
+        - expectElementByIdToBeVisible
+        - imageSnapshotExpect
+  default-param-last:
+    - warn
+  global-require:
+    - warn
+  no-void:
+    - warn
+  consistent-return:
+    - warn
+  no-param-reassign:
+    - warn

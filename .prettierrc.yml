@@ -1,0 +1,7 @@
+trailingComma: "es5"
+arrowParens: "always"
+endOfLine: lf
+singleQuote: false
+bracketSpacing: true
+printWidth: 120
+tabWidth: 2

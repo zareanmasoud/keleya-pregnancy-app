@@ -24,7 +24,6 @@ ios/.xcode.env.local
 
 # Android/IntelliJ
 #
-build/
 .idea
 .gradle
 local.properties
@@ -39,6 +38,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+/.env*
 
 # fastlane
 #
@@ -64,3 +64,11 @@ yarn-error.log
 
 # testing
 /coverage
+/e2e/RecordedTest.js
+
+.vscode
+*.patch
+
+.maestro/result.xml
+
+artifacts
